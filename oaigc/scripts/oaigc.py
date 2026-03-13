@@ -157,11 +157,11 @@ def curl_get(url: str, headers: dict, timeout: int = 60) -> subprocess.Completed
            "--max-time", str(timeout)]
     for k, v in headers.items():
         cmd += ["-H", f"{k}: {v}"]
-    return subprocess.run(cmd, capture_output=True, text=True)
+    return subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', errors='replace')
 
 
 def curl_post_json(url: str, payload: dict, headers: dict, timeout: int = 60) -> subprocess.CompletedProcess:
-    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False, encoding='utf-8') as f:
         json.dump(payload, f, ensure_ascii=False)
         tmp_path = f.name
     try:
@@ -169,7 +169,7 @@ def curl_post_json(url: str, payload: dict, headers: dict, timeout: int = 60) ->
                "--max-time", str(timeout), "-d", f"@{tmp_path}"]
         for k, v in headers.items():
             cmd += ["-H", f"{k}: {v}"]
-        return subprocess.run(cmd, capture_output=True, text=True)
+        return subprocess.run(cmd, capture_output=True, text=True, encoding='utf-8', errors='replace')
     finally:
         os.unlink(tmp_path)
 
@@ -435,13 +435,7 @@ def download_file(url: str, output_path: str) -> str:
 def build_payload(app_def: dict, args) -> dict:
     """Build API payload from app definition and CLI args."""
     # Check if this is a special endpoint with direct params (like banana_generate)
-    caps = load_capabilities()
-    special = caps.get("special_endpoints", {})
-    banana_config = special.get("banana_generate", {})
-    
-    is_direct_params = False
-    if banana_config and app_def["appId"] in ["banana", "banana2", "banana-pro"]:
-        is_direct_params = True
+    is_direct_params = app_def.get("is_special_endpoint", False)
     
     if is_direct_params:
         # Direct params format (no appId/parameter wrapper)
@@ -511,6 +505,19 @@ def build_payload(app_def: dict, args) -> dict:
         if param["key"] not in target and param.get("required") and "default" in param:
             target[param["key"]] = param["default"]
 
+    # Validate required parameters
+    missing_required = []
+    for param in app_def["params"]:
+        if param.get("required"):
+            target = payload if is_direct_params else payload["parameter"]
+            if param["key"] not in target:
+                missing_required.append(param["key"])
+    
+    if missing_required:
+        print(f"Error: missing required parameter(s): {', '.join(missing_required)}", file=sys.stderr)
+        print(f"Use --param {missing_required[0]}=value to provide it", file=sys.stderr)
+        sys.exit(1)
+
     return payload
 
 
@@ -556,13 +563,33 @@ def cmd_execute(args):
     if not submit_url:
         submit_url = TASK_SUBMIT_URL
 
+    # Debug output
     print(f"Submitting {app_def['task']} to {app_def['appId']}...", file=sys.stderr)
+    print(f"URL: {submit_url}", file=sys.stderr)
+    print(f"Payload: {json.dumps(payload, ensure_ascii=False)}", file=sys.stderr)
+    
     resp = api_post(api_key, submit_url, payload)
 
     if resp.get("code") != 200:
         print(f"Error: {resp.get('message', 'Unknown error')}", file=sys.stderr)
         sys.exit(1)
 
+    # Check if response contains direct imageUrl (like banana endpoint)
+    result_url = resp.get("data", {}).get("imageUrl")
+    if result_url:
+        # Direct response with imageUrl (no polling needed)
+        output_path = args.output
+        if not output_path:
+            ext = _guess_ext(app_def["output_type"])
+            output_path = f"/tmp/openclaw/oai-output/result.{ext}"
+
+        print(f"Downloading result to local file...", file=sys.stderr)
+        full_path = download_file(result_url, output_path)
+        print(f"OUTPUT_FILE:{full_path}")
+        print(f"WAIT_TIME:0s")
+        return
+
+    # Standard task-based response (requires polling)
     task_id = resp.get("data", {}).get("taskId")
     if not task_id:
         print(f"Error: no taskId in response: {json.dumps(resp, ensure_ascii=False)}", file=sys.stderr)

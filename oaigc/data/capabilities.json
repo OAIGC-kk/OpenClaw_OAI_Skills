@@ -1,6 +1,6 @@
 {
   "version": "2026-03-13",
-  "total": 68,
+  "total": 65,
   "api_base_url": "https://oaigc.cn/api",
   "endpoints": [
     {
@@ -220,7 +220,7 @@
         {
           "key": "aspect_ratio",
           "type": "STRING",
-          "required": false,
+          "required": true,
           "default": "9:16",
           "description": "尺寸",
           "options": [
@@ -2818,105 +2818,6 @@
           "required": false,
           "default": "5",
           "description": "时长"
-        }
-      ]
-    },
-    {
-      "appId": "flux2klein",
-      "name_cn": "Flux2-klein文生图",
-      "name_en": "Flux2-klein Text-to-Image",
-      "task": "text-to-image",
-      "output_type": "image",
-      "category": "绘图接口",
-      "popularity": 1,
-      "tags": [
-        "flux",
-        "klein"
-      ],
-      "modes": [
-        "文生图"
-      ],
-      "params": [
-        {
-          "key": "prompt",
-          "type": "STRING",
-          "required": true,
-          "description": "提示词"
-        },
-        {
-          "key": "aspect_ratio",
-          "type": "STRING",
-          "required": false,
-          "default": "9:16",
-          "description": "尺寸"
-        }
-      ]
-    },
-    {
-      "appId": "4odrawing",
-      "name_cn": "4o绘图",
-      "name_en": "GPT-4o Drawing",
-      "task": "text-to-image",
-      "output_type": "image",
-      "category": "绘图接口",
-      "popularity": 2,
-      "tags": [
-        "gpt-4o",
-        "openai"
-      ],
-      "modes": [
-        "文生图",
-        "图生图"
-      ],
-      "params": [
-        {
-          "key": "prompt",
-          "type": "STRING",
-          "required": true,
-          "description": "提示词"
-        },
-        {
-          "key": "image",
-          "type": "IMAGE",
-          "required": false,
-          "description": "参考图片"
-        },
-        {
-          "key": "aspect_ratio",
-          "type": "STRING",
-          "required": false,
-          "default": "9:16",
-          "description": "尺寸"
-        }
-      ]
-    },
-    {
-      "appId": "fluxwenshengtu",
-      "name_cn": "Flux文生图",
-      "name_en": "Flux Text-to-Image",
-      "task": "text-to-image",
-      "output_type": "image",
-      "category": "绘图接口",
-      "popularity": 3,
-      "tags": [
-        "flux"
-      ],
-      "modes": [
-        "文生图"
-      ],
-      "params": [
-        {
-          "key": "prompt",
-          "type": "STRING",
-          "required": true,
-          "description": "提示词"
-        },
-        {
-          "key": "aspect_ratio",
-          "type": "STRING",
-          "required": false,
-          "default": "9:16",
-          "description": "尺寸"
         }
       ]
     },
