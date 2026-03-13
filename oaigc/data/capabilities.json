@@ -1,0 +1,3108 @@
+{
+  "version": "2026-03-13",
+  "total": 68,
+  "api_base_url": "https://oaigc.cn/api",
+  "endpoints": [
+    {
+      "appId": "z-imagewenshengt",
+      "name_cn": "阿里造相-文生图",
+      "name_en": "Alibaba Text-to-Image",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 1,
+      "tags": [
+        "text-to-image",
+        "alibaba"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "num",
+          "type": "INT",
+          "required": true,
+          "default": 1,
+          "description": "生成数量"
+        },
+        {
+          "key": "magnification",
+          "type": "FLOAT",
+          "required": true,
+          "default": 1.1,
+          "description": "放大倍数(1.1-2.5)"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "1:1",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        },
+        {
+          "key": "use_pre_llm",
+          "type": "BOOLEAN",
+          "required": true,
+          "default": true,
+          "description": "提示词优化"
+        }
+      ],
+      "modes": [
+        "文生图"
+      ]
+    },
+    {
+      "appId": "58307ba6-9114-4587-bfcb-1f0b0293ee0a",
+      "name_cn": "万物换背景",
+      "name_en": "Background Replacement",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 2,
+      "tags": [
+        "image-edit",
+        "background"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传产品"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "简单描述场景"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "0d8cf379-348e-4ce3-acaa-163c2fe8c202",
+      "name_cn": "香蕉局部重绘",
+      "name_en": "Banana Inpainting",
+      "task": "image-inpainting",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 3,
+      "tags": [
+        "inpainting",
+        "edit"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "maskImage",
+          "type": "IMAGE",
+          "required": true,
+          "description": "遮罩图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        }
+      ],
+      "modes": [
+        "局部重绘"
+      ]
+    },
+    {
+      "appId": "wanwurongtu",
+      "name_cn": "AI万物溶图",
+      "name_en": "AI Image Fusion",
+      "task": "image-inpainting",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 4,
+      "tags": [
+        "inpainting",
+        "fusion"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图像"
+        },
+        {
+          "key": "maskImage",
+          "type": "IMAGE",
+          "required": true,
+          "description": "遮罩图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": false,
+          "description": "提示词"
+        },
+        {
+          "key": "strength_model",
+          "type": "FLOAT",
+          "required": true,
+          "default": 1.1,
+          "description": "权重"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "jimeng",
+      "name_cn": "即梦绘画",
+      "name_en": "Jimeng Drawing",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 5,
+      "tags": [
+        "text-to-image",
+        "jimeng"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "参考图片(可选，用于图生图)"
+        },
+        {
+          "key": "use_pre_llm",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true,
+          "description": "开启提示词优化"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "9:16",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        }
+      ],
+      "modes": [
+        "文生图",
+        "图生图"
+      ]
+    },
+    {
+      "appId": "AI证件照",
+      "name_cn": "AI证件照",
+      "name_en": "AI ID Photo",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 6,
+      "tags": [
+        "id-photo",
+        "portrait"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传人像"
+        },
+        {
+          "key": "background_color",
+          "type": "STRING",
+          "required": true,
+          "description": "背景颜色"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "选择尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "youxiuisheji",
+      "name_cn": "AI游戏UI设计",
+      "name_en": "AI Game UI Design",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 7,
+      "tags": [
+        "ui",
+        "game"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "text",
+          "type": "STRING",
+          "required": true,
+          "description": "输入主题内容"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "renwuchagjingronghe",
+      "name_cn": "人物场景融合",
+      "name_en": "Person Scene Fusion",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 8,
+      "tags": [
+        "composite",
+        "fusion"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传人物"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传场景"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成数量"
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "zitaiqianyi",
+      "name_cn": "人物姿态迁移",
+      "name_en": "Pose Transfer",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 9,
+      "tags": [
+        "pose",
+        "transfer"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传人物"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传姿态图"
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成数量"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "生成尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "qianzibaitai",
+      "name_cn": "千姿百态",
+      "name_en": "Multiple Poses",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 10,
+      "tags": [
+        "pose",
+        "multi"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传人物图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传人物图片"
+        },
+        {
+          "key": "image3",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传姿态图"
+        },
+        {
+          "key": "style_prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "风格提示词"
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "qwenedit",
+      "name_cn": "Qwen编辑图像",
+      "name_en": "Qwen Image Edit",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 11,
+      "tags": [
+        "qwen",
+        "edit"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图片"
+        },
+        {
+          "key": "image3",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成数量"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "生成尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "qwenfantuichutu",
+      "name_cn": "AI反推出图",
+      "name_en": "AI Reverse Image",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 12,
+      "tags": [
+        "reverse",
+        "generate"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "text",
+          "type": "STRING",
+          "required": true,
+          "description": "文本"
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成张数"
+        }
+      ],
+      "modes": [
+        "图片反推"
+      ]
+    },
+    {
+      "appId": "xiangaochengtu",
+      "name_cn": "线稿成图",
+      "name_en": "Sketch to Image",
+      "task": "sketch-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 13,
+      "tags": [
+        "sketch",
+        "colorize"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "wan2.2wenshengtu",
+      "name_cn": "Wan2.2文生图",
+      "name_en": "Wan2.2 Text-to-Image",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 14,
+      "tags": [
+        "text-to-image",
+        "wan"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": false,
+          "description": "提示词(手动)"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成数量"
+        }
+      ],
+      "modes": [
+        "文生图"
+      ]
+    },
+    {
+      "appId": "qwenshengtu",
+      "name_cn": "千问文生图",
+      "name_en": "Qwen Text-to-Image",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 15,
+      "tags": [
+        "text-to-image",
+        "qwen"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "ai_expansion",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": false,
+          "description": "AI扩写"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成数量"
+        }
+      ],
+      "modes": [
+        "文生图"
+      ]
+    },
+    {
+      "appId": "chongdaguang",
+      "name_cn": "AI废片拯救",
+      "name_en": "AI Photo Rescue",
+      "task": "image-enhance",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 16,
+      "tags": [
+        "enhance",
+        "rescue"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "zhenrenyijianshouban",
+      "name_cn": "真人一键手办",
+      "name_en": "Real Person to Figure",
+      "task": "image-style-transfer",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 17,
+      "tags": [
+        "style",
+        "figure"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "strength",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "强度"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "qushuiyin",
+      "name_cn": "智能消除",
+      "name_en": "Smart Erase",
+      "task": "image-inpainting",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 18,
+      "tags": [
+        "erase",
+        "remove"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词（消除内容）"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "laozhaopianxiufu",
+      "name_cn": "老照片修复",
+      "name_en": "Old Photo Restoration",
+      "task": "image-enhance",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 19,
+      "tags": [
+        "enhance",
+        "restore"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "dianshangdaihuo",
+      "name_cn": "电商带货",
+      "name_en": "E-commerce Product",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 20,
+      "tags": [
+        "e-commerce",
+        "product"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传模特图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传产品图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成数量"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "生成尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "fluxtuxiangbianji",
+      "name_cn": "flux图像编辑",
+      "name_en": "Flux Image Edit",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 21,
+      "tags": [
+        "flux",
+        "edit"
+      ],
+      "params": [
+        {
+          "key": "mode",
+          "type": "STRING",
+          "required": false,
+          "default": "图像生成",
+          "description": "模式",
+          "options": [
+            "图像生成",
+            "图像编辑"
+          ]
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": false,
+          "description": "提示词"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "9:16",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        },
+        {
+          "key": "max",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": false,
+          "description": "max"
+        },
+        {
+          "key": "text",
+          "type": "STRING",
+          "required": false,
+          "description": "文本"
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": false,
+          "default": "1",
+          "description": "生成数量"
+        }
+      ],
+      "modes": [
+        "文生图",
+        "图生图"
+      ]
+    },
+    {
+      "appId": "kelingimage",
+      "name_cn": "可灵绘图",
+      "name_en": "Kling Drawing",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 22,
+      "tags": [
+        "text-to-image",
+        "kling"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图片"
+        },
+        {
+          "key": "model",
+          "type": "STRING",
+          "required": false,
+          "default": "kling-v2-1",
+          "description": "模型",
+          "options": [
+            "kling-v2-1",
+            "kling-v2",
+            "kling-v1-5",
+            "kling-v1"
+          ]
+        },
+        {
+          "key": "mode",
+          "type": "STRING",
+          "required": false,
+          "description": "参考类型",
+          "options": [
+            "face",
+            "subject"
+          ]
+        },
+        {
+          "key": "strength1",
+          "type": "STRING",
+          "required": false,
+          "default": "1",
+          "description": "角色参考强度"
+        },
+        {
+          "key": "strength2",
+          "type": "STRING",
+          "required": false,
+          "default": "1",
+          "description": "脸部参考强度"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "9:16",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": false,
+          "default": "1",
+          "description": "生成数量"
+        }
+      ],
+      "modes": [
+        "文生图",
+        "图生图"
+      ]
+    },
+    {
+      "appId": "doubao4.0",
+      "name_cn": "豆包绘图4.0",
+      "name_en": "Doubao Drawing 4.0",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 23,
+      "tags": [
+        "text-to-image",
+        "doubao"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图一"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图二"
+        },
+        {
+          "key": "image3",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图三"
+        },
+        {
+          "key": "image4",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图四"
+        },
+        {
+          "key": "model",
+          "type": "STRING",
+          "required": false,
+          "description": "模型类型",
+          "options": [
+            "img2imgs",
+            "text2imgs"
+          ]
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        }
+      ],
+      "modes": [
+        "文生图",
+        "图生图"
+      ]
+    },
+    {
+      "appId": "jipuli",
+      "name_cn": "吉卜力风格图生图",
+      "name_en": "Ghibli Style Transfer",
+      "task": "image-style-transfer",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 24,
+      "tags": [
+        "style",
+        "ghibli"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "yijianxiushou",
+      "name_cn": "一键修手",
+      "name_en": "Hand Repair",
+      "task": "image-enhance",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 25,
+      "tags": [
+        "enhance",
+        "hand"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "chanpinchongdaguang",
+      "name_cn": "产品重打光换背景v2",
+      "name_en": "Product Relighting v2",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 26,
+      "tags": [
+        "product",
+        "relight"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传产品图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传场景参考风格"
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "renxianggaoqingfangda",
+      "name_cn": "高清放大",
+      "name_en": "Image Upscale",
+      "task": "image-upscale",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 27,
+      "tags": [
+        "upscale",
+        "enhance"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "maopeifzhuangxiu",
+      "name_cn": "毛呸房装修v3",
+      "name_en": "Room Renovation v3",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 28,
+      "tags": [
+        "room",
+        "renovation"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传毛呸图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传参考图片"
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成数量"
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "wanwuqianyi",
+      "name_cn": "AI万物迁移v4",
+      "name_en": "AI Object Transfer v4",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 29,
+      "tags": [
+        "transfer",
+        "composite"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传产品图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传场景图片"
+        },
+        {
+          "key": "maskImage",
+          "type": "IMAGE",
+          "required": true,
+          "description": "场景遮罩图片"
+        },
+        {
+          "key": "strength",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "权重"
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "jubuchonghui",
+      "name_cn": "局部重绘工作流",
+      "name_en": "Local Inpainting Workflow",
+      "task": "image-inpainting",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 30,
+      "tags": [
+        "inpainting",
+        "workflow"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "maskImage",
+          "type": "IMAGE",
+          "required": true,
+          "description": "遮罩图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        }
+      ],
+      "modes": [
+        "局部重绘"
+      ]
+    },
+    {
+      "appId": "kuotu",
+      "name_cn": "AI扩图",
+      "name_en": "AI Image Outpainting",
+      "task": "image-outpainting",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 31,
+      "tags": [
+        "outpainting",
+        "extend"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "top",
+          "type": "STRING",
+          "required": false,
+          "default": "1",
+          "description": "上"
+        },
+        {
+          "key": "bottom",
+          "type": "STRING",
+          "required": false,
+          "default": "1",
+          "description": "下"
+        },
+        {
+          "key": "left",
+          "type": "STRING",
+          "required": false,
+          "default": "1",
+          "description": "左"
+        },
+        {
+          "key": "right",
+          "type": "STRING",
+          "required": false,
+          "default": "1",
+          "description": "右"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "jianzhi",
+      "name_cn": "万物可剪-新年剪纸风",
+      "name_en": "Paper Cut Style",
+      "task": "image-style-transfer",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 32,
+      "tags": [
+        "style",
+        "paper-cut"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "renlianxiufu",
+      "name_cn": "人脸修复",
+      "name_en": "Face Repair",
+      "task": "image-enhance",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 33,
+      "tags": [
+        "enhance",
+        "face"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "tupiankoutu",
+      "name_cn": "AI抠图",
+      "name_en": "AI Background Removal",
+      "task": "image-segmentation",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 34,
+      "tags": [
+        "segmentation",
+        "background-removal"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "xiangaoshangse",
+      "name_cn": "AI线稿上色",
+      "name_en": "AI Sketch Colorization",
+      "task": "sketch-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 35,
+      "tags": [
+        "sketch",
+        "colorize"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传线稿图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传风格参考图片"
+        },
+        {
+          "key": "batch_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "生成数量"
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "renwujingtouduojiao",
+      "name_cn": "人物镜头多角度",
+      "name_en": "Multi-Angle Portrait",
+      "task": "image-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 36,
+      "tags": [
+        "portrait",
+        "multi-angle"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ],
+      "modes": [
+        "图生图"
+      ]
+    },
+    {
+      "appId": "yijianhuanyi",
+      "name_cn": "一键换衣",
+      "name_en": "One-Click Change Clothes",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 37,
+      "tags": [
+        "clothes",
+        "change"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传模特"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传服装"
+        }
+      ],
+      "modes": [
+        "多图合成"
+      ]
+    },
+    {
+      "appId": "wenshengshipin",
+      "name_cn": "文生视频",
+      "name_en": "Text to Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 1,
+      "tags": [
+        "text-to-video"
+      ],
+      "modes": [
+        "文生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "生成尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        }
+      ]
+    },
+    {
+      "appId": "soraapi",
+      "name_cn": "Sora2视频",
+      "name_en": "Sora2 Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 2,
+      "tags": [
+        "sora",
+        "text-to-video",
+        "premium"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "model",
+          "type": "STRING",
+          "required": false,
+          "default": "sora-2",
+          "description": "模型",
+          "options": [
+            "sora-2",
+            "sora-2-pro"
+          ]
+        },
+        {
+          "key": "images",
+          "type": "IMAGE",
+          "required": false,
+          "description": "图片"
+        },
+        {
+          "key": "hd",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": false,
+          "description": "高清"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "10",
+          "description": "时长",
+          "options": [
+            "10",
+            "15"
+          ]
+        },
+        {
+          "key": "duration2",
+          "type": "STRING",
+          "required": false,
+          "default": "25",
+          "description": "最大时长",
+          "options": [
+            "25",
+            "15",
+            "10"
+          ]
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "16:9",
+          "description": "输出比例",
+          "options": [
+            "16:9",
+            "9:16"
+          ]
+        },
+        {
+          "key": "video",
+          "type": "VIDEO",
+          "required": false,
+          "description": "角色客串视频"
+        }
+      ]
+    },
+    {
+      "appId": "grokapi",
+      "name_cn": "Grok视频",
+      "name_en": "Grok Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 3,
+      "tags": [
+        "grok",
+        "text-to-video"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "model",
+          "type": "STRING",
+          "required": true,
+          "default": "grok-video-3",
+          "description": "模型",
+          "options": [
+            "grok-video-3",
+            "grok-video-3-pro"
+          ]
+        },
+        {
+          "key": "input_reference",
+          "type": "IMAGE",
+          "required": false,
+          "description": "图片地址"
+        },
+        {
+          "key": "seconds",
+          "type": "STRING",
+          "required": true,
+          "default": "10",
+          "description": "时长",
+          "options": [
+            "10"
+          ]
+        },
+        {
+          "key": "size",
+          "type": "STRING",
+          "required": true,
+          "default": "1080x720",
+          "description": "尺寸",
+          "options": [
+            "720x720",
+            "720x480",
+            "480x720",
+            "1080x1080",
+            "1080x720",
+            "720x1080"
+          ]
+        }
+      ]
+    },
+    {
+      "appId": "jimengshipin",
+      "name_cn": "即梦视频3.0",
+      "name_en": "Jimeng Video 3.0",
+      "task": "image-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 4,
+      "tags": [
+        "jimeng",
+        "image-to-video"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": false,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "上传图片"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "9:16",
+          "description": "尺寸",
+          "options": [
+            "1:1",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2"
+          ]
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "10",
+          "description": "时长",
+          "options": [
+            "10",
+            "5"
+          ]
+        },
+        {
+          "key": "text",
+          "type": "STRING",
+          "required": false,
+          "default": "图生视频",
+          "description": "模式",
+          "options": [
+            "图生视频",
+            "文生视频"
+          ]
+        }
+      ]
+    },
+    {
+      "appId": "tushengshipin",
+      "name_cn": "图生视频",
+      "name_en": "Image to Video",
+      "task": "image-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 5,
+      "tags": [
+        "image-to-video"
+      ],
+      "modes": [
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "motion_amplitude",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "动作速度"
+        },
+        {
+          "key": "definition",
+          "type": "STRING",
+          "required": true,
+          "default": "2",
+          "description": "清晰度",
+          "options": [
+            "1",
+            "2"
+          ]
+        }
+      ]
+    },
+    {
+      "appId": "duocanshipin",
+      "name_cn": "多参视频",
+      "name_en": "Multi-Param Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 6,
+      "tags": [
+        "multi-param",
+        "vidu"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "images",
+          "type": "STRING",
+          "required": true,
+          "description": "图片(逗号分隔)"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "video_aspect_ratio",
+          "type": "STRING",
+          "required": true,
+          "default": "16:9",
+          "description": "视频比例"
+        },
+        {
+          "key": "resolution",
+          "type": "STRING",
+          "required": true,
+          "default": "1080p",
+          "description": "分辨率"
+        },
+        {
+          "key": "movement_amplitude",
+          "type": "STRING",
+          "required": true,
+          "default": "auto",
+          "description": "镜头幅度"
+        },
+        {
+          "key": "bgm",
+          "type": "BOOLEAN",
+          "required": true,
+          "default": false,
+          "description": "背景音乐"
+        },
+        {
+          "key": "model",
+          "type": "STRING",
+          "required": true,
+          "default": "viduq2",
+          "description": "视频模型"
+        }
+      ]
+    },
+    {
+      "appId": "shouweizhen",
+      "name_cn": "首尾帧",
+      "name_en": "Start-End Frame to Video",
+      "task": "start-end-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 7,
+      "tags": [
+        "frame-to-video"
+      ],
+      "modes": [
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传首帧图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传尾帧图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "definition",
+          "type": "STRING",
+          "required": false,
+          "default": "2",
+          "description": "清晰度(1标清/2高清)",
+          "options": [
+            "1",
+            "2"
+          ]
+        }
+      ]
+    },
+    {
+      "appId": "duotushipin",
+      "name_cn": "首中尾视频",
+      "name_en": "Start-Middle-End Video",
+      "task": "start-middle-end-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 8,
+      "tags": [
+        "multi-frame",
+        "video"
+      ],
+      "modes": [
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传首帧图片"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传中帧图片"
+        },
+        {
+          "key": "image3",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传尾帧图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "definition",
+          "type": "STRING",
+          "required": true,
+          "default": "2",
+          "description": "清晰度"
+        }
+      ]
+    },
+    {
+      "appId": "shipinrebwutihuan",
+      "name_cn": "AI视频替换人物",
+      "name_en": "AI Video Face Swap",
+      "task": "video-face-swap",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 9,
+      "tags": [
+        "face-swap",
+        "video-edit"
+      ],
+      "modes": [
+        "视频换脸"
+      ],
+      "params": [
+        {
+          "key": "video",
+          "type": "VIDEO",
+          "required": true,
+          "description": "上传视频"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传人物图片"
+        },
+        {
+          "key": "action_prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "动作描述"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        }
+      ]
+    },
+    {
+      "appId": "pinpinqudongtupian",
+      "name_cn": "音频驱动图片",
+      "name_en": "Audio Driven Image",
+      "task": "audio-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 10,
+      "tags": [
+        "audio",
+        "talking-head"
+      ],
+      "modes": [
+        "音频驱动"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "audio",
+          "type": "AUDIO",
+          "required": true,
+          "description": "音频源"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        }
+      ]
+    },
+    {
+      "appId": "shipingaoqingfangda",
+      "name_cn": "视频高清放大",
+      "name_en": "Video Upscale",
+      "task": "video-upscale",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 11,
+      "tags": [
+        "upscale",
+        "video"
+      ],
+      "modes": [
+        "视频处理"
+      ],
+      "params": [
+        {
+          "key": "video",
+          "type": "VIDEO",
+          "required": true,
+          "description": "视频地址"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "description": "时长"
+        }
+      ]
+    },
+    {
+      "appId": "wudaodongzuoqianyi",
+      "name_cn": "舞蹈动作迁移",
+      "name_en": "Dance Motion Transfer",
+      "task": "video-motion-transfer",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 12,
+      "tags": [
+        "dance",
+        "motion"
+      ],
+      "modes": [
+        "动作迁移"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "图片"
+        },
+        {
+          "key": "video",
+          "type": "VIDEO",
+          "required": true,
+          "description": "视频"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "10",
+          "description": "时长"
+        },
+        {
+          "key": "definition",
+          "type": "STRING",
+          "required": true,
+          "default": "1",
+          "description": "清晰度(1标清/2高清)",
+          "options": [
+            "1",
+            "2"
+          ]
+        }
+      ]
+    },
+    {
+      "appId": "shipindongzuoqianyi",
+      "name_cn": "视频动作迁移",
+      "name_en": "Video Motion Transfer",
+      "task": "video-motion-transfer",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 13,
+      "tags": [
+        "motion",
+        "transfer"
+      ],
+      "modes": [
+        "动作迁移"
+      ],
+      "params": [
+        {
+          "key": "video",
+          "type": "VIDEO",
+          "required": true,
+          "description": "上传视频"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "描述行为"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        }
+      ]
+    },
+    {
+      "appId": "shipinduikouxing",
+      "name_cn": "视频对口型",
+      "name_en": "Video Lip Sync",
+      "task": "video-lip-sync",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 14,
+      "tags": [
+        "lip-sync",
+        "audio"
+      ],
+      "modes": [
+        "对口型"
+      ],
+      "params": [
+        {
+          "key": "video",
+          "type": "VIDEO",
+          "required": true,
+          "description": "上传视频"
+        },
+        {
+          "key": "audio",
+          "type": "AUDIO",
+          "required": true,
+          "description": "上传音频"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "描述词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        }
+      ]
+    },
+    {
+      "appId": "shuzirenkoubo",
+      "name_cn": "AI图片数字人",
+      "name_en": "AI Digital Human",
+      "task": "digital-human",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 15,
+      "tags": [
+        "digital-human",
+        "avatar"
+      ],
+      "modes": [
+        "数字人"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        },
+        {
+          "key": "audio",
+          "type": "AUDIO",
+          "required": true,
+          "description": "上传音频"
+        },
+        {
+          "key": "action_prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "动作提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": true,
+          "default": "5",
+          "description": "时长"
+        }
+      ]
+    },
+    {
+      "appId": "tuxiangfantui",
+      "name_cn": "图像提示词反推",
+      "name_en": "Image to Prompt",
+      "task": "image-to-text",
+      "output_type": "string",
+      "category": "文本接口",
+      "popularity": 1,
+      "tags": [
+        "prompt",
+        "reverse"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "上传图片"
+        }
+      ]
+    },
+    {
+      "appId": "yuyinkelong",
+      "name_cn": "AI语音克隆",
+      "name_en": "AI Voice Clone",
+      "task": "voice-clone",
+      "output_type": "audio",
+      "category": "音频接口",
+      "popularity": 1,
+      "tags": [
+        "voice",
+        "clone",
+        "tts"
+      ],
+      "params": [
+        {
+          "key": "audio",
+          "type": "AUDIO",
+          "required": true,
+          "description": "音频"
+        },
+        {
+          "key": "text",
+          "type": "STRING",
+          "required": true,
+          "description": "输入文本"
+        },
+        {
+          "key": "text2",
+          "type": "STRING",
+          "required": true,
+          "default": "可爱",
+          "description": "情绪控制，比如：愤怒、可爱"
+        }
+      ]
+    },
+    {
+      "appId": "banana",
+      "name_cn": "Banana生图",
+      "name_en": "Banana Generate",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 38,
+      "tags": [
+        "text-to-image",
+        "banana"
+      ],
+      "is_special_endpoint": true,
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词、文本描述"
+        },
+        {
+          "key": "model",
+          "type": "STRING",
+          "required": true,
+          "default": "banana",
+          "description": "模型",
+          "options": [
+            "banana",
+            "banana2",
+            "banana-pro"
+          ]
+        },
+        {
+          "key": "size",
+          "type": "STRING",
+          "required": true,
+          "default": "9:16",
+          "description": "生成图像的尺寸"
+        },
+        {
+          "key": "image_size",
+          "type": "STRING",
+          "required": true,
+          "default": "1k",
+          "description": "图像大小"
+        },
+        {
+          "key": "hd",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true,
+          "description": "高清模式"
+        },
+        {
+          "key": "fast",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true,
+          "description": "开启快速模式"
+        },
+        {
+          "key": "images",
+          "type": "ARRAY",
+          "required": false,
+          "description": "图片数组"
+        }
+      ],
+      "modes": [
+        "文生图",
+        "图生图"
+      ]
+    },
+    {
+      "appId": "klingomni",
+      "name_cn": "Kling Omni视频",
+      "name_en": "Kling Omni Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 1,
+      "tags": [
+        "kling",
+        "omni"
+      ],
+      "modes": [
+        "文生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "16:9",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "veo3",
+      "name_cn": "Veo3视频",
+      "name_en": "Veo3 Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 2,
+      "tags": [
+        "veo3",
+        "google"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "参考图片"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "16:9",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "wan26video",
+      "name_cn": "Wan2.6视频",
+      "name_en": "Wan2.6 Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 3,
+      "tags": [
+        "wan",
+        "video"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "参考图片"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "16:9",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "luma",
+      "name_cn": "Luma视频",
+      "name_en": "Luma Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 4,
+      "tags": [
+        "luma"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "参考图片"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "16:9",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "runway",
+      "name_cn": "Runway视频",
+      "name_en": "Runway Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 5,
+      "tags": [
+        "runway"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "参考图片"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "16:9",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "haiguo",
+      "name_cn": "海螺视频",
+      "name_en": "Hailuo Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 6,
+      "tags": [
+        "hailuo",
+        "haiguo"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "参考图片"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "16:9",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "kelingvideo",
+      "name_cn": "可灵视频",
+      "name_en": "Keling Video",
+      "task": "text-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 7,
+      "tags": [
+        "keling",
+        "kling"
+      ],
+      "modes": [
+        "文生视频",
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "参考图片"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "16:9",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "seedance",
+      "name_cn": "Seedance视频",
+      "name_en": "Seedance Video",
+      "task": "image-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 8,
+      "tags": [
+        "seedance",
+        "bytedance"
+      ],
+      "modes": [
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "参考图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        }
+      ]
+    },
+    {
+      "appId": "oaivideo",
+      "name_cn": "OAI视频",
+      "name_en": "OAI Video",
+      "task": "image-to-video",
+      "output_type": "video",
+      "category": "视频接口",
+      "popularity": 9,
+      "tags": [
+        "oai"
+      ],
+      "modes": [
+        "图生视频"
+      ],
+      "params": [
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": true,
+          "description": "参考图片"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "duration",
+          "type": "STRING",
+          "required": false,
+          "default": "5",
+          "description": "时长"
+        }
+      ]
+    },
+    {
+      "appId": "flux2klein",
+      "name_cn": "Flux2-klein文生图",
+      "name_en": "Flux2-klein Text-to-Image",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 1,
+      "tags": [
+        "flux",
+        "klein"
+      ],
+      "modes": [
+        "文生图"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "9:16",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "4odrawing",
+      "name_cn": "4o绘图",
+      "name_en": "GPT-4o Drawing",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 2,
+      "tags": [
+        "gpt-4o",
+        "openai"
+      ],
+      "modes": [
+        "文生图",
+        "图生图"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "image",
+          "type": "IMAGE",
+          "required": false,
+          "description": "参考图片"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "9:16",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "fluxwenshengtu",
+      "name_cn": "Flux文生图",
+      "name_en": "Flux Text-to-Image",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 3,
+      "tags": [
+        "flux"
+      ],
+      "modes": [
+        "文生图"
+      ],
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        },
+        {
+          "key": "aspect_ratio",
+          "type": "STRING",
+          "required": false,
+          "default": "9:16",
+          "description": "尺寸"
+        }
+      ]
+    },
+    {
+      "appId": "wanwushengwanwu",
+      "name_cn": "AI万物生万物",
+      "name_en": "AI Everything Generates Everything",
+      "task": "image-composite",
+      "output_type": "image",
+      "category": "绘图接口",
+      "popularity": 4,
+      "tags": [
+        "composite",
+        "generate"
+      ],
+      "modes": [
+        "多图合成"
+      ],
+      "params": [
+        {
+          "key": "image1",
+          "type": "IMAGE",
+          "required": true,
+          "description": "图片1"
+        },
+        {
+          "key": "image2",
+          "type": "IMAGE",
+          "required": false,
+          "description": "图片2"
+        },
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词"
+        }
+      ]
+    }
+  ],
+  "special_endpoints": {
+    "task_query": {
+      "path": "/v1/task/query/{taskId}",
+      "method": "GET",
+      "name_cn": "任务查询",
+      "name_en": "Task Query",
+      "params": [
+        {
+          "key": "taskId",
+          "type": "STRING",
+          "required": true,
+          "description": "任务ID",
+          "in": "path"
+        }
+      ]
+    },
+    "model_list": {
+      "path": "/v1/model/list",
+      "method": "GET",
+      "name_cn": "获取模型列表",
+      "name_en": "Get Model List"
+    },
+    "app_cost": {
+      "path": "/v1/workflow/app/cost",
+      "method": "POST",
+      "name_cn": "获取应用价格",
+      "name_en": "Get App Cost",
+      "params": [
+        {
+          "key": "appId",
+          "type": "STRING",
+          "required": true,
+          "description": "应用ID"
+        },
+        {
+          "key": "parameter",
+          "type": "OBJECT",
+          "required": true,
+          "description": "参数"
+        }
+      ]
+    },
+    "model_cost": {
+      "path": "/v1/model/cost",
+      "method": "POST",
+      "name_cn": "获取模型价格",
+      "name_en": "Get Model Cost",
+      "params": [
+        {
+          "key": "model",
+          "type": "STRING",
+          "required": true,
+          "description": "模型"
+        }
+      ]
+    },
+    "banana_generate": {
+      "path": "/v1/banbana/generate",
+      "method": "POST",
+      "name_cn": "Banana生图",
+      "name_en": "Banana Generate",
+      "task": "text-to-image",
+      "output_type": "image",
+      "category": "绘图接口",
+      "params": [
+        {
+          "key": "prompt",
+          "type": "STRING",
+          "required": true,
+          "description": "提示词、文本描述"
+        },
+        {
+          "key": "model",
+          "type": "STRING",
+          "required": true,
+          "description": "模型",
+          "options": [
+            "banana",
+            "banana2",
+            "banana-pro"
+          ]
+        },
+        {
+          "key": "size",
+          "type": "STRING",
+          "required": true,
+          "description": "生成图像的尺寸"
+        },
+        {
+          "key": "image_size",
+          "type": "STRING",
+          "required": true,
+          "description": "图像大小"
+        },
+        {
+          "key": "hd",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true,
+          "description": "高清模式"
+        },
+        {
+          "key": "fast",
+          "type": "BOOLEAN",
+          "required": false,
+          "default": true,
+          "description": "开启快速模式"
+        },
+        {
+          "key": "images",
+          "type": "ARRAY",
+          "required": false,
+          "description": "图片数组"
+        }
+      ]
+    },
+    "account_info": {
+      "path": "/v1/user/account-info",
+      "method": "GET",
+      "name_cn": "获取账户信息",
+      "name_en": "Get Account Info",
+      "task": "account-query",
+      "output_type": "json",
+      "category": "用户接口",
+      "response_fields": [
+        {
+          "key": "point",
+          "type": "INT",
+          "description": "O币余额"
+        },
+        {
+          "key": "nickname",
+          "type": "STRING",
+          "description": "用户昵称"
+        },
+        {
+          "key": "vipGrade",
+          "type": "STRING",
+          "description": "VIP等级"
+        },
+        {
+          "key": "hasNoWatermarkPerm",
+          "type": "BOOLEAN",
+          "description": "是否有无水印权限"
+        }
+      ]
+    }
+  }
+}
